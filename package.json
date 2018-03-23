@@ -7,7 +7,9 @@
   "author": "vilicvane",
   "license": "MIT",
   "scripts": {
-    "test": "ava"
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "test": "yarn lint && yarn build && ava"
   },
   "files": [
     "mobx",

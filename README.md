@@ -1,3 +1,6 @@
+[![NPM Package](https://badge.fury.io/js/replace-object.svg)](https://www.npmjs.com/package/replace-object)
+[![Build Status](https://travis-ci.org/vilic/replace-object.svg?branch=master)](https://travis-ci.org/vilic/replace-object)
+
 # replace-object
 
 A simple utility for in-place object replacing.

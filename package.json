@@ -1,0 +1,40 @@
+{
+  "name": "replace-object",
+  "version": "0.1.0",
+  "main": "bld/index.js",
+  "types": "bld/index.d.ts",
+  "repository": "https://github.com/vilic/replace-object.git",
+  "author": "vilicvane",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "mobx",
+    "bld",
+    "!bld/test",
+    "!bld/**/*.js.map"
+  ],
+  "devDependencies": {
+    "@types/lodash": "^4.14.106",
+    "ava": "^0.25.0",
+    "mobx": "^4.1.0",
+    "prettier": "^1.11.1",
+    "tslint": "^5.9.1",
+    "tslint-language-service": "^0.9.8",
+    "typescript": "^2.7.2",
+    "vts": "^5.8.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "tslib": "^1.9.0"
+  },
+  "ava": {
+    "files": [
+      "bld/test/**/*.test.js"
+    ],
+    "source": [
+      "bld/**/*"
+    ]
+  }
+}

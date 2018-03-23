@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "stripInternal": true,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "importHelpers": true,
+    "newLine": "LF",
+    "rootDir": "src",
+    "outDir": "bld",
+    "plugins": [{"name": "tslint-language-service"}]
+  },
+  "include": ["src", "types"]
+}

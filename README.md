@@ -15,7 +15,7 @@ npm install replace-object
 
 ## Usage
 
-Using the default replacer:
+### Default Replacer
 
 ```ts
 import replaceObject from 'replace-object';
@@ -25,9 +25,39 @@ let foo = {a: 123, b: 'abc'};
 replaceObject(foo, {b: 'def', c: true});
 
 foo; // {b: 'def', c: true}
+
+replaceObject(foo, {b: 'def', c: true}, {delete: false});
+
+foo; // {a: 123, b: 'def', c: true}
+
+replaceObject(foo, {b: 'def', c: true}, {add: false});
+
+foo; // {b: 'def'}
 ```
 
-Using the mobx observable replacer:
+Options:
+
+```ts
+interface ObjectReplacerOptions {
+  /**
+   * Whether to do shallow replace without recursion, defaults to `false`.
+   */
+  shallow?: boolean;
+
+  /**
+   * Whether to add new properties, defaults to `true`.
+   */
+  add?: boolean;
+
+  /**
+   * Whether to delete properties that does not exists on the `withObject`,
+   * defaults to `true`.
+   */
+  delete?: boolean;
+}
+```
+
+### MobX Observable Replacer
 
 ```ts
 import {observable} from 'mobx';

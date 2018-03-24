@@ -3,8 +3,18 @@ import * as _ from 'lodash';
 export type ReplaceableType = 'object' | 'array';
 
 export interface ObjectReplacerInternalOptions {
+  /**
+   * Whether to do shallow replace without recursion, defaults to `false`.
+   */
   shallow: boolean;
+  /**
+   * Whether to add new properties, defaults to `true`.
+   */
   add: boolean;
+  /**
+   * Whether to delete properties that does not exists on the `withObject`,
+   * defaults to `true`.
+   */
   delete: boolean;
 }
 

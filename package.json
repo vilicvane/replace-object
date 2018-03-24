@@ -1,6 +1,6 @@
 {
   "name": "replace-object",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple utility for in-place object replacing.",
   "keywords": [
     "object",

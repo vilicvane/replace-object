@@ -73,3 +73,52 @@ test('should replace array', t => {
   t.is(foo.arr.length, 1);
   t.deepEqual(foo.arr, [3]);
 });
+
+test('should do non-addition replace', t => {
+  let foo: any = {
+    arr: [1, 2],
+    a: 1,
+  };
+
+  replaceObject(
+    foo,
+    {
+      arr: [3, 4, 5],
+      a: 2,
+      b: 3,
+    },
+    {
+      add: false,
+    },
+  );
+
+  t.deepEqual(foo, {
+    arr: [3, 4, 5],
+    a: 2,
+  });
+});
+
+test('should do non-deletion replace', t => {
+  let foo: any = {
+    arr: [1, 2],
+    a: 1,
+    b: 3,
+  };
+
+  replaceObject(
+    foo,
+    {
+      arr: [3],
+      a: 2,
+    },
+    {
+      delete: false,
+    },
+  );
+
+  t.deepEqual(foo, {
+    arr: [3],
+    a: 2,
+    b: 3,
+  });
+});

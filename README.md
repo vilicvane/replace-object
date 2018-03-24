@@ -23,16 +23,17 @@ import replaceObject from 'replace-object';
 let foo = {a: 123, b: 'abc'};
 
 replaceObject(foo, {b: 'def', c: true});
-
 foo; // {b: 'def', c: true}
 
-replaceObject(foo, {b: 'def', c: true}, {delete: false});
+let bar = {a: 123, b: 'abc'};
 
-foo; // {a: 123, b: 'def', c: true}
+replaceObject(bar, {b: 'def', c: true}, {delete: false});
+bar; // {a: 123, b: 'def', c: true}
 
-replaceObject(foo, {b: 'def', c: true}, {add: false});
+let pia = {a: 123, b: 'abc'};
 
-foo; // {b: 'def'}
+replaceObject(pia, {b: 'def', c: true}, {add: false});
+pia; // {b: 'def'}
 ```
 
 Options:
@@ -66,7 +67,6 @@ import replaceObject from 'replace-object/mobx';
 let foo = observable({a: 123, b: 'abc'});
 
 replaceObject(foo, {b: 'def', c: true});
-
 foo; // observable {b: 'def', c: true}
 ```
 

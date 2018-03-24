@@ -8,3 +8,5 @@ export default function replaceObject<T extends object>(
   let replacer = new ObjectReplacer(options);
   replacer.replace(object, withObject);
 }
+
+export * from './object-replacer';

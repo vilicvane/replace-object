@@ -2,23 +2,27 @@ import * as _ from 'lodash';
 
 export type ReplaceableType = 'object' | 'array';
 
-export interface ObjectReplacerInternalOptions {
+interface ObjectReplacerInternalOptions {
+  shallow: boolean;
+  add: boolean;
+  delete: boolean;
+}
+
+export interface ObjectReplacerOptions {
   /**
    * Whether to do shallow replace without recursion, defaults to `false`.
    */
-  shallow: boolean;
+  shallow?: boolean;
   /**
    * Whether to add new properties, defaults to `true`.
    */
-  add: boolean;
+  add?: boolean;
   /**
    * Whether to delete properties that does not exists on the `withObject`,
    * defaults to `true`.
    */
-  delete: boolean;
+  delete?: boolean;
 }
-
-export type ObjectReplacerOptions = Partial<ObjectReplacerInternalOptions>;
 
 export class ObjectReplacer {
   private options: ObjectReplacerInternalOptions;

@@ -1,6 +1,14 @@
 {
   "name": "replace-object",
   "version": "0.1.1",
+  "description": "A simple utility for in-place object replacing.",
+  "keywords": [
+    "object",
+    "replace",
+    "deep",
+    "recursive",
+    "mobx"
+  ],
   "main": "bld/index.js",
   "types": "bld/index.d.ts",
   "repository": "https://github.com/vilic/replace-object.git",

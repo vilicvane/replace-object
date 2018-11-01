@@ -1,6 +1,0 @@
-{
-  "extends": "vts/tslint-prettier",
-  "rules": {
-    "no-require-imports": false
-  }
-}

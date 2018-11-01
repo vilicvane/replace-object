@@ -1,6 +1,6 @@
 {
   "name": "replace-object",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A simple utility for in-place object replacing.",
   "keywords": [
     "object",
@@ -20,31 +20,23 @@
     "test": "yarn lint && yarn build && ava"
   },
   "files": [
-    "mobx",
     "bld",
     "!bld/test",
     "!bld/**/*.js.map"
   ],
   "devDependencies": {
-    "@types/lodash": "^4.14.106",
-    "ava": "^0.25.0",
-    "mobx": "^4.1.0",
-    "prettier": "^1.11.1",
-    "tslint": "^5.9.1",
-    "tslint-language-service": "^0.9.8",
-    "typescript": "^2.7.2",
-    "vts": "^5.8.3"
+    "@magicspace/configs": "^0.1.45",
+    "@types/jest": "^23.3.9",
+    "@types/lodash": "^4.14.117",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^3.1.3"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
-    "tslib": "^1.9.0"
-  },
-  "ava": {
-    "files": [
-      "bld/test/**/*.test.js"
-    ],
-    "source": [
-      "bld/**/*"
-    ]
+    "lodash": "^4.17.11",
+    "tslib": "^1.9.3"
   }
 }

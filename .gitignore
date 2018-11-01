@@ -1,5 +1,21 @@
-/node_modules/
-/bld/
+# Installable packages
 
-npm-debug.log
-yarn-error.log
+node_modules/
+
+# Configuration
+
+.config/
+
+# Building artifacts
+
+bld/
+*.tgz
+
+# Debugging outputs
+
+*.log
+
+# Testing files
+
+_*
+!__snapshots__*

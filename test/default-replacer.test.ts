@@ -1,10 +1,6 @@
-// tslint:disable:no-implicit-dependencies
+import replaceObject from '../bld/library';
 
-import {test} from 'ava';
-
-import replaceObject from '..';
-
-test('should do deep replace', t => {
+test('should do deep replace', () => {
   let foo: any = {
     a: 123,
     b: {
@@ -23,13 +19,13 @@ test('should do deep replace', t => {
     },
   });
 
-  t.is(foo.b, b);
-  t.is(foo.b.c, 'def');
-  t.is(foo.b.e, 789);
-  t.false('d' in foo);
+  expect(foo.b).toBe(b);
+  expect(foo.b.c).toBe('def');
+  expect(foo.b.e).toBe(789);
+  expect('d' in foo).toBe(false);
 });
 
-test('should do shallow replace', t => {
+test('should do shallow replace', () => {
   let foo: any = {
     a: 123,
     b: {
@@ -52,13 +48,13 @@ test('should do shallow replace', t => {
     {shallow: true},
   );
 
-  t.not(foo.b, b);
-  t.is(foo.b.c, 'def');
-  t.is(foo.b.e, 789);
-  t.false('d' in foo);
+  expect(foo.b).not.toBe(b);
+  expect(foo.b.c).toBe('def');
+  expect(foo.b.e).toBe(789);
+  expect('d' in foo).toBe(false);
 });
 
-test('should replace array', t => {
+test('should replace array', () => {
   let foo: any = {
     arr: [1, 2],
   };
@@ -69,12 +65,12 @@ test('should replace array', t => {
     arr: [3],
   });
 
-  t.is(foo.arr, arr);
-  t.is(foo.arr.length, 1);
-  t.deepEqual(foo.arr, [3]);
+  expect(foo.arr).toBe(arr);
+  expect(foo.arr.length).toBe(1);
+  expect(foo.arr).toEqual([3]);
 });
 
-test('should do non-addition replace', t => {
+test('should do non-addition replace', () => {
   let foo: any = {
     arr: [1, 2],
     a: 1,
@@ -92,13 +88,13 @@ test('should do non-addition replace', t => {
     },
   );
 
-  t.deepEqual(foo, {
+  expect(foo).toEqual({
     arr: [3, 4, 5],
     a: 2,
   });
 });
 
-test('should do non-deletion replace', t => {
+test('should do non-deletion replace', () => {
   let foo: any = {
     arr: [1, 2],
     a: 1,
@@ -116,7 +112,7 @@ test('should do non-deletion replace', t => {
     },
   );
 
-  t.deepEqual(foo, {
+  expect(foo).toEqual({
     arr: [3],
     a: 2,
     b: 3,

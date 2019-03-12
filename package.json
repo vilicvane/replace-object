@@ -8,8 +8,8 @@
     "deep",
     "recursive"
   ],
-  "main": "bld/index.js",
-  "types": "bld/index.d.ts",
+  "main": "bld/library/index.js",
+  "types": "bld/library/index.d.ts",
   "repository": "https://github.com/vilic/replace-object.git",
   "author": "vilicvane",
   "license": "MIT",

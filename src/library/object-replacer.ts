@@ -59,6 +59,14 @@ export class ObjectReplacer {
     return _.isPlainObject(object);
   }
 
+  protected isSameReplaceableType(x: any, y: any): ReplaceableType | false {
+    return this.isReplaceableObject(x) && this.isReplaceableObject(y)
+      ? 'object'
+      : this.isReplaceableArray(x) && this.isReplaceableArray(y)
+        ? 'array'
+        : false;
+  }
+
   protected getArrayKeys(object: any): string[] {
     return ['length', ...Object.keys(object)];
   }
@@ -116,14 +124,6 @@ export class ObjectReplacer {
         ? this.getObjectKeys(object)
         : this.getArrayKeys(object),
     );
-  }
-
-  private isSameReplaceableType(x: any, y: any): ReplaceableType | false {
-    return this.isReplaceableObject(x) && this.isReplaceableObject(y)
-      ? 'object'
-      : this.isReplaceableArray(x) && this.isReplaceableArray(y)
-        ? 'array'
-        : false;
   }
 
   private assertSameReplaceableType(x: any, y: any): ReplaceableType {

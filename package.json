@@ -1,10 +1,10 @@
 {
   "name": "replace-object",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "A simple utility for in-place object replacing.",
   "repository": "https://github.com/vilic/replace-object.git",
   "license": "MIT",
-  "author": "Awesome Author",
+  "author": "vilicvane",
   "type": "module",
   "exports": {
     "types": "./bld/library/index.d.ts",

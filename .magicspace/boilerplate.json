@@ -6,7 +6,7 @@
     "description": "A simple utility for in-place object replacing.",
     "license": "MIT",
     "repository": "https://github.com/vilic/replace-object.git",
-    "author": "Awesome Author",
+    "author": "vilicvane",
     "defaultBranch": "master",
     "packageManager": "pnpm",
     "badges": {

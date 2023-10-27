@@ -1,0 +1,31 @@
+{
+  "name": "replace-object",
+  "version": "0.0.0",
+  "description": "A simple utility for in-place object replacing.",
+  "repository": "https://github.com/vilic/replace-object.git",
+  "license": "MIT",
+  "author": "Awesome Author",
+  "type": "module",
+  "exports": {
+    "types": "./bld/library/index.d.ts",
+    "default": "./bld/library/index.js"
+  },
+  "scripts": {
+    "3": "pnpm install && pnpm dedupe && pnpm install",
+    "build": "rimraf ./bld && tsc --build",
+    "lint": "eslint --no-error-on-unmatched-pattern . && run-in-every eslint-project --parallel --echo -- eslint --no-error-on-unmatched-pattern .",
+    "lint-prettier": "prettier --check .",
+    "test": "pnpm lint-prettier && pnpm build && pnpm lint"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@mufan/eslint-plugin": "^0.2.13",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "run-in-every": "^0.2.0",
+    "typescript": "^5.2.2"
+  }
+}

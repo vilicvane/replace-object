@@ -1,40 +1,31 @@
 {
   "name": "replace-object",
-  "version": "0.2.1",
+  "version": "0.0.0",
   "description": "A simple utility for in-place object replacing.",
-  "keywords": [
-    "object",
-    "replace",
-    "deep",
-    "recursive"
-  ],
-  "main": "bld/library/index.js",
-  "types": "bld/library/index.d.ts",
   "repository": "https://github.com/vilic/replace-object.git",
-  "author": "vilicvane",
   "license": "MIT",
-  "scripts": {
-    "lint": "tslint --project src/library",
-    "build": "tsc --project src/library",
-    "test": "jest"
+  "author": "Awesome Author",
+  "type": "module",
+  "exports": {
+    "types": "./bld/library/index.d.ts",
+    "default": "./bld/library/index.js"
   },
-  "files": [
-    "bld",
-    "src/**/*.ts"
-  ],
-  "devDependencies": {
-    "@magicspace/configs": "^0.1.47",
-    "@types/jest": "^24.0.11",
-    "@types/lodash": "^4.14.123",
-    "jest": "^24.4.0",
-    "prettier": "^1.16.4",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.13.1",
-    "tslint-language-service": "^0.9.9",
-    "typescript": "^3.3.3333"
+  "scripts": {
+    "3": "pnpm install && pnpm dedupe && pnpm install",
+    "build": "rimraf ./bld && tsc --build",
+    "lint": "eslint --no-error-on-unmatched-pattern . && run-in-every eslint-project --parallel --echo -- eslint --no-error-on-unmatched-pattern .",
+    "lint-prettier": "prettier --check .",
+    "test": "pnpm lint-prettier && pnpm build && pnpm lint"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
-    "tslib": "^1.9.3"
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@mufan/eslint-plugin": "^0.2.13",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "run-in-every": "^0.2.0",
+    "typescript": "^5.2.2"
   }
 }

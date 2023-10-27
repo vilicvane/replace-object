@@ -1,21 +1,7 @@
-# Installable packages
-
-node_modules/
-
-# Configuration
-
-.config/
-
-# Building artifacts
-
-bld/
+# General
+.DS_Store
 *.tgz
-
-# Debugging outputs
-
-*.log
-
-# Testing files
-
-_*
-!__snapshots__*
+node_modules/
+# TypeScript Build Artifacts
+bld/
+*.tsbuildinfo

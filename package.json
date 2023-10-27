@@ -15,14 +15,20 @@
     "build": "rimraf ./bld && tsc --build",
     "lint": "eslint --no-error-on-unmatched-pattern . && run-in-every eslint-project --parallel --echo -- eslint --no-error-on-unmatched-pattern .",
     "lint-prettier": "prettier --check .",
-    "test": "pnpm lint-prettier && pnpm build && pnpm lint"
+    "test": "pnpm lint-prettier && pnpm build && pnpm lint && pnpm bare-test",
+    "bare-test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.200",
+    "lodash": "^4.17.21",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@mufan/eslint-plugin": "^0.2.13",
+    "@types/jest": "^29.5.6",
+    "cross-env": "^7.0.3",
     "eslint": "^8.52.0",
+    "jest": "^29.7.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "run-in-every": "^0.2.0",

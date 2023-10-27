@@ -1,4 +1,5 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+/** @type {import('jest').Config} */
+export default {
+  transform: {},
+  testMatch: ['<rootDir>/bld/test/*.test.js'],
 };

@@ -1,14 +1,14 @@
-import * as _ from 'lodash';
+import _ from 'lodash';
 
 export type ReplaceableType = 'object' | 'array';
 
-interface ObjectReplacerInternalOptions {
+type ObjectReplacerInternalOptions = {
   shallow: boolean;
   add: boolean;
   delete: boolean;
-}
+};
 
-export interface ObjectReplacerOptions {
+export type ObjectReplacerOptions = {
   /**
    * Whether to do shallow replace without recursion, defaults to `false`.
    */
@@ -22,7 +22,7 @@ export interface ObjectReplacerOptions {
    * defaults to `true`.
    */
   delete?: boolean;
-}
+};
 
 export class ObjectReplacer {
   private options: ObjectReplacerInternalOptions;
@@ -63,8 +63,8 @@ export class ObjectReplacer {
     return this.isReplaceableObject(x) && this.isReplaceableObject(y)
       ? 'object'
       : this.isReplaceableArray(x) && this.isReplaceableArray(y)
-        ? 'array'
-        : false;
+      ? 'array'
+      : false;
   }
 
   protected getArrayKeys(object: any): string[] {
@@ -80,29 +80,29 @@ export class ObjectReplacer {
     withObject: any,
     type = this.assertSameReplaceableType(object, withObject),
   ): void {
-    let options = this.options;
+    const options = this.options;
 
-    let currentKeySet = this.getReplaceableKeySet(object, type);
-    let nextKeySet = this.getReplaceableKeySet(withObject, type);
+    const currentKeySet = this.getReplaceableKeySet(object, type);
+    const nextKeySet = this.getReplaceableKeySet(withObject, type);
 
-    let newKeySet = new Set(nextKeySet);
+    const newKeySet = new Set(nextKeySet);
 
-    for (let key of currentKeySet) {
+    for (const key of currentKeySet) {
       newKeySet.delete(key);
     }
 
     if (options.add || type === 'array') {
-      for (let key of newKeySet) {
+      for (const key of newKeySet) {
         this.add(object, key, withObject[key]);
       }
     }
 
-    for (let key of currentKeySet) {
+    for (const key of currentKeySet) {
       if (nextKeySet.has(key)) {
-        let currentValue = object[key];
-        let nextValue = withObject[key];
+        const currentValue = object[key];
+        const nextValue = withObject[key];
 
-        let type = this.isSameReplaceableType(currentValue, nextValue);
+        const type = this.isSameReplaceableType(currentValue, nextValue);
 
         if (!options.shallow && type) {
           this._replace(currentValue, nextValue, type);
@@ -127,7 +127,7 @@ export class ObjectReplacer {
   }
 
   private assertSameReplaceableType(x: any, y: any): ReplaceableType {
-    let type = this.isSameReplaceableType(x, y);
+    const type = this.isSameReplaceableType(x, y);
 
     if (type) {
       return type;

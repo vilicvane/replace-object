@@ -1,12 +1,13 @@
-import {ObjectReplacer, ObjectReplacerOptions} from './object-replacer';
+import type {ObjectReplacerOptions} from './object-replacer.js';
+import {ObjectReplacer} from './object-replacer.js';
 
 export default function replaceObject<T extends object>(
   object: T,
   withObject: T,
   options?: ObjectReplacerOptions,
 ): void {
-  let replacer = new ObjectReplacer(options);
+  const replacer = new ObjectReplacer(options);
   replacer.replace(object, withObject);
 }
 
-export * from './object-replacer';
+export * from './object-replacer.js';

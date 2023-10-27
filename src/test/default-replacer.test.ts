@@ -1,7 +1,7 @@
-import replaceObject from '../bld/library';
+import replaceObject from '../library/index.js';
 
 test('should do deep replace', () => {
-  let foo: any = {
+  const foo: any = {
     a: 123,
     b: {
       c: 'abc',
@@ -9,7 +9,7 @@ test('should do deep replace', () => {
     d: true,
   };
 
-  let b = foo.b;
+  const b = foo.b;
 
   replaceObject(foo, {
     a: 456,
@@ -26,7 +26,7 @@ test('should do deep replace', () => {
 });
 
 test('should do shallow replace', () => {
-  let foo: any = {
+  const foo: any = {
     a: 123,
     b: {
       c: 'abc',
@@ -34,7 +34,7 @@ test('should do shallow replace', () => {
     d: true,
   };
 
-  let b = foo.b;
+  const b = foo.b;
 
   replaceObject(
     foo,
@@ -55,11 +55,11 @@ test('should do shallow replace', () => {
 });
 
 test('should replace array', () => {
-  let foo: any = {
+  const foo: any = {
     arr: [1, 2],
   };
 
-  let arr = foo.arr;
+  const arr = foo.arr;
 
   replaceObject(foo, {
     arr: [3],
@@ -71,7 +71,7 @@ test('should replace array', () => {
 });
 
 test('should do non-addition replace', () => {
-  let foo: any = {
+  const foo: any = {
     arr: [1, 2],
     a: 1,
   };
@@ -95,7 +95,7 @@ test('should do non-addition replace', () => {
 });
 
 test('should do non-deletion replace', () => {
-  let foo: any = {
+  const foo: any = {
     arr: [1, 2],
     a: 1,
     b: 3,

@@ -1,6 +1,6 @@
 {
   "name": "replace-object",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A simple utility for in-place object replacing.",
   "repository": "https://github.com/vilic/replace-object.git",
   "license": "MIT",
